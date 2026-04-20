@@ -1,0 +1,29 @@
+[Unit]
+Description=mygit Smart HTTP Git Server
+After=network.target
+
+[Service]
+Type=simple
+User=mygit
+Group=mygit
+WorkingDirectory=/opt/mygit
+EnvironmentFile=/etc/mygit/mygit.env
+ExecStart=/opt/mygit/.venv/bin/gunicorn \
+  --bind 0.0.0.0:${MYGIT_PORT} \
+  --workers 2 \
+  --timeout 120 \
+  --access-logfile /var/log/mygit/access.log \
+  --error-logfile /var/log/mygit/error.log \
+  "server.app:create_app()"
+Restart=on-failure
+RestartSec=5
+
+# 보안 하드닝
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/mygit /var/log/mygit /etc/mygit
+
+[Install]
+WantedBy=multi-user.target

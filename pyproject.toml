@@ -1,13 +1,13 @@
-﻿[build-system]
+[build-system]
 requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "mygit"
-version = "0.1.0"
+version = "0.7.0"
 description = "Smart-HTTP git server compatible with the standard git client"
 requires-python = ">=3.10"
-dependencies = ["Flask==3.0.3"]
+dependencies = ["Flask==3.0.3", "gunicorn==23.0.0"]
 
 [tool.setuptools.packages.find]
 include = ["server*"]

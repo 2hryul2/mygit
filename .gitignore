@@ -15,3 +15,7 @@ env/
 repos/*.git/
 
 config/users.json
+
+dist/
+vendor/
+.claude/

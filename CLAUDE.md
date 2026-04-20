@@ -1,4 +1,4 @@
-﻿# mygit
+# mygit
 
 ## Project
 

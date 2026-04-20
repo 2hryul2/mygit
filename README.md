@@ -1,4 +1,4 @@
-﻿# mygit
+# mygit
 
 표준 git 클라이언트와 호환되는 Smart HTTP git 서버. Steps 1-6 완료. 42 테스트 통과.
 
